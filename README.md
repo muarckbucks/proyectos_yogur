@@ -6,6 +6,15 @@ Si os parece un lío lo metemos en google drive y au.
 
 Aquí voy a ir dejando todos los documentos del trabajo, siempre en su última versión. No tenéis que hacer nada raro, solo descargar lo que necesitéis.
 
+## _herramientas? .gitignore? qué es eso?
+
+Hay archivos y carpetas que no son parte del proyecto pero le ayudan a la IA a generarlo mejor:
+
+- **_herramientas**: En esa carpeta hay código que usa la IA para hacer los documentos.
+- **.gitignore**: Para que no se suban archivos residuales al proyecto.
+- **CLAUDE.md**: Es un resumen de contexto que usa la IA para hacer los documentos, este lo podeis consultar y cambiar si queréis y encontráis que hay algo que está mal.
+- **README.md**: Este archivos es básicamente lo que estáis leyendo ahora mismo, es donde os voy explicando el proyecto.
+
 ## Cómo descargar un documento
 
 1. Entrad en la carpeta del documento (por ejemplo, `Acta de constitución`).
