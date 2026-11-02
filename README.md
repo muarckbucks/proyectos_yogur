@@ -1,5 +1,9 @@
 # Proyecto BCAT-YOGUR 🥛
 
+Buenas chicos, esto es Github, es como un google drive pero mejor, va guardando los diferentes cambios de las versiones sin tener que ponerle nombres raros tipo _v2, _v3...
+
+Si os parece un lío lo metemos en google drive y au.
+
 Aquí voy a ir dejando todos los documentos del trabajo, siempre en su última versión. No tenéis que hacer nada raro, solo descargar lo que necesitéis.
 
 ## Cómo descargar un documento
