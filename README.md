@@ -25,4 +25,5 @@ Y ya lo tenéis en el ordenador para abrirlo con Word.
 
 - **Acta de constitución**: el acta del proyecto.
 - **Gestión de interesados**: el documento de interesados y los apuntes del tema.
+- **EDT**: el documento de gestión del alcance (requisitos, alcance y EDT) y los apuntes del tema.
 - **Plantilla_documentos_BCAT-YOGUR.docx**: la plantilla con el formato. Si hacemos un documento nuevo, sale de aquí para que todos queden iguales.
