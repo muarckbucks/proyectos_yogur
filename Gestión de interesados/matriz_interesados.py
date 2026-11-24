@@ -1,42 +1,45 @@
 """Matriz de análisis de interesados (poder / interés) del proyecto BCAT-YOGUR.
 
-Para cambiar la posición de un interesado basta con tocar su interés o su poder
-(escala de 1 a 10) en la lista DATOS y volver a ejecutar el script.
+Las puntuaciones (de 0 a 10) están en puntuaciones_interesados.csv. Son solo para
+situar los puntos en la gráfica; en el documento solo aparece bajo, medio o alto.
+Para mover un interesado se cambia su interés o su poder en el CSV y se vuelve a
+ejecutar el script.
 """
+import csv
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 
-# (nº, nombre corto, interno/externo, interés, poder)
-DATOS = [
-    (1, "Dirección General (promotor)", "Interno", 9, 10),
-    (2, "Director del proyecto", "Interno", 10, 7),
-    (3, "Producción", "Interno", 8, 7),
-    (4, "Mantenimiento", "Interno", 8, 4),
-    (5, "Operarios de planta", "Interno", 6, 2),
-    (6, "Ingeniería de frío industrial", "Externo", 9, 4),
-    (7, "Fabricante de las bombas de calor", "Externo", 8, 6),
-    (8, "Empresa instaladora", "Externo", 7, 3),
-    (9, "Servicio Territorial de Industria", "Externo", 2, 9),
-    (10, "Clientes (cadenas de distribución)", "Externo", 3, 6),
-    (11, "Vecinos y empresas del polígono", "Externo", 3, 2),
-    (12, "Organismo de control (OCA)", "Externo", 2, 4),
-    (13, "Compañía eléctrica", "Externo", 2, 3),
-]
+CSV = Path(__file__).with_name("puntuaciones_interesados.csv")
+
+
+def leer_datos():
+    """Devuelve una lista de (nº, nombre, interno/externo, interés, poder)."""
+    with open(CSV, encoding="utf-8") as f:
+        return [(int(r["nº"]), r["interesado"], r["tipo"], float(r["interés"]), float(r["poder"]))
+                for r in csv.DictReader(f, delimiter=";")]
+
+
+DATOS = leer_datos()
 
 CUADRANTES = {  # (x0, y0): (texto, color de fondo)
     (5, 5): ("GESTIONAR\nACTIVAMENTE", "#D9D9D9"),
     (0, 5): ("MANTENER\nSATISFECHOS", "#EBEBEB"),
     (5, 0): ("MANTENER\nINFORMADOS", "#EBEBEB"),
-    (0, 0): ("SUPERVISAR CON EL\nMÍNIMO ESFUERZO", "#F7F7F7"),
+    (0, 0): ("SUPERVISAR", "#F7F7F7"),
 }
 
 
 def estrategia(interes, poder):
     if poder > 5:
         return "Gestionar activamente" if interes > 5 else "Mantener satisfechos"
-    return "Mantener informados" if interes > 5 else "Supervisar con el mínimo esfuerzo"
+    return "Mantener informados" if interes > 5 else "Supervisar"
+
+
+def nivel(valor):
+    """Nivel que se pone en el documento: bajo (<4), medio (4 a <7) o alto (>=7)."""
+    return "Bajo" if valor < 4 else "Medio" if valor < 7 else "Alto"
 
 
 def dibujar(salida):
@@ -59,9 +62,9 @@ def dibujar(salida):
 
     ax.set_xlim(0, 10.5)
     ax.set_ylim(0, 10.5)
-    ax.set_xticks(range(0, 11))
-    ax.set_yticks(range(0, 11))
-    ax.tick_params(labelsize=7, colors="#595959", length=0)
+    # Sin escala numérica: en el documento solo se habla de bajo, medio o alto
+    ax.set_xticks([])
+    ax.set_yticks([])
     for lado in ("top", "right"):
         ax.spines[lado].set_visible(False)
     for lado in ("left", "bottom"):
@@ -98,3 +101,5 @@ if __name__ == "__main__":
     salida = Path(__file__).with_name("matriz_interesados.png")
     dibujar(salida)
     print("Matriz guardada en", salida)
+    for n, nombre, _, i, p in DATOS:
+        print(f"{n:>2}. {nombre:<36} interés {nivel(i):<5} poder {nivel(p):<5} {estrategia(i, p)}")
