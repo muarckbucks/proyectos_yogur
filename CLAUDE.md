@@ -27,7 +27,6 @@ Acta de constitución/                  acta (editada a mano, no tiene script)
 Gestión de interesados/                documento + apuntes + matriz_interesados.py (genera la matriz)
 EDT/                                   documento + apuntes + generar_edt.py (genera diagrama y documento)
 _herramientas/docx_plantilla.py        clase Documento: abre la plantilla, limpia el ejemplo, añade títulos, tablas, figuras y pies numerados
-README.md                              para los compañeros (María Jesús y Pablo), muy sencillo y cercano
 ```
 
 - Una carpeta por documento, con los apuntes del tema dentro.
