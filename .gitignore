@@ -1,1 +1,6 @@
 __pycache__/
+
+# Archivos temporales de documentos abiertos (Word, Excel, PowerPoint, ONLYOFFICE, LibreOffice)
+~$*
+.~lock.*#
+*.tmp

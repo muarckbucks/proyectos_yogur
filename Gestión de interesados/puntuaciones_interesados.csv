@@ -1,10 +1,10 @@
 nº;interesado;tipo;interés;poder
 1;Dirección General (promotor);Interno;9;9.8
 2;Director del proyecto;Interno;9.8;7.5
-3;Producción;Interno;7.8;6.6
-4;Mantenimiento;Interno;7.7;4
+3;Equipo de producción;Interno;7.8;6.6
+4;Personal de mantenimiento;Interno;7.7;4
 5;Operarios de planta;Interno;6.5;2.5
-6;Ingeniería de frío industrial;Externo;8.8;4.5
+6;Equipo de ingeniería de frío industrial;Externo;8.8;4.5
 7;Fabricante de las bombas de calor;Externo;7.5;5.5
 8;Empresa instaladora;Externo;7;3.5
 9;Servicio Territorial de Industria;Externo;2.3;7.6
