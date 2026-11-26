@@ -66,8 +66,8 @@ PAQUETES = [
     ("4.2", "Integración con el frío", "Aprovechar el calor de la instalación frigorífica",
      "Intercambiadores y circuito de recuperación de calor de condensación.",
      "Empresa instaladora", "H5", 60_000, "Ago – Oct 2027 (3 meses)"),
-    ("4.3", "Depósitos de acumulación", "Cubrir los picos del CIP y desplazar consumo",
-     "Suministro y colocación de los depósitos de 95 °C y de 45–50 °C.",
+    ("4.3", "Depósito de acumulación", "Cubrir los picos del CIP y desplazar consumo",
+     "Suministro y colocación del depósito de acumulación estratificado.",
      "Empresa instaladora", "H6", 55_000, "Sep – Nov 2027 (3 meses)"),
     ("4.4", "Red hidráulica", "Llevar el calor a cada consumidor",
      "Tuberías por niveles de temperatura, bombas con variador y valvulería.",
@@ -186,7 +186,7 @@ def generar_documento():
         ("R05", "Circuitos indirectos: el refrigerante nunca está en contacto con el producto.",
          "Alta", "Seguridad alimentaria", "Producción", "Alcance", "3.1, 4.5",
          "Esquema hidráulico del proyecto", "Revisión del diseño e inspección del montaje"),
-        ("R06", "Depósitos de acumulación para cubrir los picos del CIP y consumir más en horas valle.",
+        ("R06", "Depósito de acumulación para cubrir los picos del CIP y consumir más en horas valle.",
          "Media", "Técnico", "Acta de constitución", "Coste", "4.3",
          "El CIP se hace sin bajar de 85 °C", "Prueba de un ciclo de CIP completo"),
         ("R07", "No perder producción: la línea solo se toca en las paradas programadas.",
@@ -214,7 +214,7 @@ def generar_documento():
     d.lista([
         "Dos bombas de calor de alta temperatura de CO₂ (R744) de unos 175 kW térmicos cada una.",
         "Un circuito de recuperación de calor conectado a la instalación frigorífica existente.",
-        "Depósitos de acumulación de agua a 95 °C y a 45–50 °C.",
+        "Un depósito de acumulación estratificado: el agua a 95 °C se toma de la parte alta y la de 45–50 °C de una toma intermedia.",
         "Una red hidráulica separada por niveles de temperatura, con bombas con variador.",
         "El pasteurizador, los tanques de incubación y el CIP adaptados para usar el nuevo calor.",
         "Un sistema de control PLC/SCADA con contadores de energía térmica y eléctrica.",
@@ -242,7 +242,7 @@ def generar_documento():
     d.lista([
         "La parada de producción de agosto de 2027 dura lo suficiente para adaptar los consumidores (unas tres semanas).",
         "La instalación frigorífica tiene suficiente calor de condensación aprovechable.",
-        "Hay espacio en la planta para las bombas de calor y los depósitos sin hacer obra de ampliación.",
+        "Hay espacio en la planta para las bombas de calor y el depósito sin hacer obra de ampliación.",
         "El fabricante entrega las bombas de calor en un plazo de 4 a 6 meses desde el pedido.",
     ])
     d.titulo("2.4. Restricciones", 2)
